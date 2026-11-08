@@ -440,6 +440,150 @@ html.gs .gsap-h{will-change:transform}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+/* --------- layer that follows the reference screens --------- */
+.btn{background:var(--blue);box-shadow:0 0 0 5px var(--bg,#fff),0 0 0 6.5px var(--blue2),inset 0 1px 0 #9CBDFF,inset 0 -3px 0 var(--blue3)}
+.btn:hover{box-shadow:0 0 0 8px var(--bg,#fff),0 0 0 9.5px var(--blue2),inset 0 1px 0 #BFD4FF,inset 0 -3px 0 var(--blue)}
+.nav{transition:translate .35s}
+.nav.away{translate:-50% -130%}
+.h1{font-size:clamp(42px,6.6vw,96px)}
+
+/* hero: the white stand inside a silver room */
+.room{position:relative;overflow:clip;padding:clamp(92px,9vw,118px) 0 0;--bg:#fff}
+.ceil{position:absolute;left:0;right:0;top:0;height:clamp(70px,8vw,112px);background:#1B1B1E;clip-path:polygon(0 0,100% 0,88% 100%,12% 100%)}
+.ceil i{position:absolute;top:40%;height:5px;width:22%;background:#E8E8E4;border-radius:3px;animation:lamp 3.4s ease-in-out infinite}
+.ceil i:first-child{left:24%}.ceil i:last-child{right:24%;animation-delay:.5s}
+@keyframes lamp{0%,100%{opacity:1}50%{opacity:.62}}
+.pil{position:absolute;top:clamp(300px,27vw,400px);display:flex;flex-direction:column;gap:clamp(8px,1.4vw,22px);font:700 clamp(60px,8.4vw,126px)/.9 var(--disp);color:#fff;opacity:.5;hyphens:none}
+.pil.l{left:clamp(14px,3.4vw,54px)}.pil.r{right:clamp(14px,3.4vw,54px);text-align:right}
+.pan{position:relative;z-index:3;width:min(1130px,calc(100% - clamp(32px,12vw,290px)));margin:0 auto;background-color:#fff;border-radius:22px 22px 0 0;animation:rise 1s cubic-bezier(.2,1,.3,1) both}
+@keyframes rise{from{translate:0 80px}to{translate:0 0}}
+.ptop{text-align:center;padding:clamp(44px,5.5vw,84px) clamp(16px,5vw,70px) 0}
+.ptop .sub{margin-inline:auto;max-width:42ch}
+.dashes.pd{padding:0 clamp(16px,4vw,60px);margin-top:clamp(48px,5vw,68px)}
+.dashes.pd h3{hyphens:none}
+.ribbon{margin-top:clamp(30px,3.4vw,44px);width:100%;height:clamp(72px,7vw,92px);transform-origin:50% 50%;animation:wipe .9s .25s cubic-bezier(.2,1,.3,1) both}
+@keyframes wipe{from{transform:scaleX(.2)}to{transform:scaleX(1)}}
+.ribbon .btn{animation:unwipe .9s .25s cubic-bezier(.2,1,.3,1) both}
+@keyframes unwipe{from{transform:scaleX(5)}to{transform:scaleX(1)}}
+.glh{position:absolute;z-index:4;--hw:clamp(190px,27vw,430px);width:var(--hw);height:auto;top:clamp(120px,14vw,205px);pointer-events:none}
+.glh.l{left:calc(50% - min(565px,50% - clamp(16px,6vw,145px)) - var(--hw)*.76);animation:slideL 1.1s .1s cubic-bezier(.2,1.2,.4,1) both}
+.glh.r{right:calc(50% - min(565px,50% - clamp(16px,6vw,145px)) - var(--hw)*.76);transform:scaleX(-1);animation:slideR 1.1s .1s cubic-bezier(.2,1.2,.4,1) both}
+@keyframes slideL{from{translate:-60% 0}to{translate:0 0}}
+@keyframes slideR{from{translate:60% 0}to{translate:0 0}}
+
+/* glass pieces */
+.gl{position:absolute;z-index:1;pointer-events:none;height:auto}
+.vg{position:absolute;top:50%;writing-mode:vertical-rl;translate:0 -50%;font:700 clamp(70px,9.5vw,150px)/1 var(--disp);letter-spacing:-.04em;color:#17171A;pointer-events:none;z-index:1;white-space:nowrap;hyphens:none}
+.vg.l{left:clamp(-30px,-1vw,0px);rotate:180deg}.vg.r{right:clamp(-30px,-1vw,0px)}
+.sec .wrap{z-index:2}
+
+/* story */
+.tc{position:relative;overflow:hidden}
+.obj{position:absolute;right:12px;bottom:10px;width:clamp(58px,6.5vw,92px);height:auto;opacity:.92}
+
+/* route tiles */
+.stp i.ti{position:relative}
+.stp i.ti img{width:58%;height:auto}
+.stp i.ti::after{content:"";position:absolute;right:7px;top:7px;width:8px;height:8px;border-radius:50%;background:#0A0A0B}
+html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{transform:scaleY(0)}
+.stp::after{transform-origin:0 50%;transition:transform .5s .15s}.stp::before{transform-origin:50% 0;transition:transform .5s .25s}
+
+/* dies interlude */
+.dies{position:relative}
+.dstick{position:relative;overflow:clip;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(8px,2vh,24px);padding:40px 0;--bs:min(54svh,78vw,540px)}
+.balls{position:relative;width:var(--bs);aspect-ratio:1;z-index:3;animation:none}
+.balls img.o{position:absolute;height:auto}
+.balls span{position:absolute;font:700 calc(var(--bs)*.4)/1 var(--disp);letter-spacing:-.04em;translate:-50% -50%;hyphens:none}
+.dcap{position:relative;z-index:4;text-align:center;padding:0 var(--gut)}.dcap .sub{margin-inline:auto}
+.glh2{position:absolute;top:26%;--hw:clamp(180px,26vw,430px);width:var(--hw);height:auto;z-index:5;pointer-events:none}
+.glh2.l{left:calc(50% - var(--bs)/2 - var(--hw)*.86)}
+.glh2.r{right:calc(50% - var(--bs)/2 - var(--hw)*.86);transform:scaleX(-1)}
+
+/* scene */
+.rack{border:2px solid #E4E4E0}
+.rail{background:#CFCFCB;box-shadow:inset 0 -2px 0 #8F8F8B}
+.jk img{width:100%;height:auto;display:block}
+.jk[data-j]{color:inherit}
+.pt img{rotate:-90deg;width:100%;height:auto}
+@media(max-width:1020px){.jk{width:auto;height:72%}.jk img{height:100%;width:auto;max-width:none}}
+
+/* services */
+.srv.three{align-items:stretch}
+.svw{display:flex;flex-direction:column;gap:12px;min-width:0}
+.svw .sv{flex:1;display:flex;flex-direction:column;gap:8px}
+.svw .sv h3{margin-bottom:4px}
+.svw .ex{margin-top:auto;border-color:#E3E3DF}
+.thumb{position:relative;height:clamp(130px,13vw,170px);border-radius:14px;overflow:hidden;display:grid;place-items:center;transition:scale .3s}
+.svw:hover .thumb{scale:1.03}
+.thumb.w{background:#fff}.thumb.g{background:var(--green)}
+.thumb .gl2{position:absolute;width:62%;right:-14%;top:-30%;height:auto}
+.thumb .ico{position:relative;width:clamp(70px,7vw,96px);height:auto}.thumb .ico.inv{filter:invert(1)}
+
+/* tabs and giant word */
+.tabs{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;align-items:center;margin-bottom:clamp(24px,3vw,40px)}
+.tabs>span{width:1px;height:24px;background:#3A3A40}
+.tabs .opt{color:#fff;min-height:48px;padding:0 22px}.tabs .opt:hover{background:#1C2A4A;color:#fff}
+.giant{font:700 clamp(46px,11.4vw,176px)/1.04 var(--disp);letter-spacing:-.05em;text-align:center;color:#fff;margin:0 0 clamp(-30px,-2vw,-8px);position:relative;z-index:1;hyphens:none;text-wrap:balance}
+.fpanel{position:relative;z-index:2;background:#111113;border:2px solid #3B3B40;border-radius:24px;padding:clamp(20px,3.4vw,48px)}
+.fam{border:0!important;padding:0!important}
+.b2{color:var(--blue2)}
+#forms .bld,#forms .twin,#forms .snap{background:#1B1B1F;--bg:#1B1B1F}
+#forms .more{background:#1B1B1F}
+.flyer{position:absolute;z-index:9;pointer-events:none;font:700 clamp(26px,3.3vw,44px)/1 var(--disp);letter-spacing:-.035em;background:var(--c);color:var(--ci);border-radius:8px;padding:.08em .16em}
+.fabr{position:relative}
+.onk .dash{background:#1B1B1F;border-color:#47474d}
+
+/* arrows */
+.arws{display:flex;align-items:center;gap:14px;margin-top:18px}
+.arws span{min-width:96px;text-align:center;font-weight:600;color:var(--fg)}
+.arw{width:54px;height:54px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:20px;box-shadow:0 0 0 4px var(--card),0 0 0 5.5px var(--blue2);transition:background .2s,box-shadow .2s}
+.arw:hover{background:var(--blue2);box-shadow:0 0 0 7px var(--card),0 0 0 8.5px var(--blue2)}
+
+/* tablet */
+.tabletw{max-width:980px}
+.tablet{border:12px solid #2B2B30;border-radius:38px;background:#0F0F11;--bg:#0F0F11;padding:clamp(20px,4vw,56px)}
+.tablet::before{top:-12px;height:10px;width:130px;background:#47474D}
+.thead{margin-bottom:clamp(24px,3vw,36px)}
+.thead .h2{font-size:clamp(34px,5vw,68px)}
+.tog{display:inline-flex;vertical-align:middle;width:1.25em;height:.56em;border-radius:99px;background:#26262B;margin-left:.15em;padding:.06em;font-size:.72em}
+.tog b{display:block;width:.44em;height:.44em;border-radius:50%;background:var(--green);animation:tog 2.4s ease-in-out infinite}
+@keyframes tog{0%,100%{translate:0 0}50%{translate:.68em 0}}
+
+/* cheat tiles, service tiles */
+.ch i{background:var(--green)}.ch i img{width:66%;height:auto}
+.md{background:#fff;color:var(--k);border:1px solid var(--bd)}
+.md:hover{background:#EEF3FE}
+.md img{width:44px;height:auto}
+
+/* notion gallery lands flat from an isometric stack */
+.iso-w{perspective:1600px}
+.frame-i{border:2px solid #DADAD6}
+
+/* end */
+.drape{--dw:max(1680px,150vw);position:absolute;left:50%;margin-left:calc(var(--dw)/-2);translate:none;bottom:0;width:var(--dw);max-width:none;height:auto;pointer-events:none;z-index:1}
+.end .wrap{z-index:3}
+
+@media(max-width:1020px){
+  .pil{display:none}
+  .pan{width:calc(100% - 32px)}
+  .ptop{padding-top:clamp(120px,22vw,170px)}
+  .glh{--hw:44vw;top:clamp(96px,14vw,124px)}
+  .glh.l{left:-14vw}.glh.r{right:-14vw}
+  .srv.three{grid-template-columns:1fr}
+  .tabs>span{display:none}
+  .vg{display:none}
+}
+@media(max-width:700px){
+  .glh{--hw:50vw}.glh.l{left:-19vw}.glh.r{right:-19vw}
+  .glh2{--hw:44vw;top:10%}.glh2.l{left:-16vw}.glh2.r{right:-16vw}
+  .giant{margin-bottom:10px}
+  .tabs .opt{padding:0 15px;min-height:44px;font-size:14px}
+  .tablet{border-width:8px;border-radius:26px}
+  .mods .md img{width:36px}
+}
+
+.sub.c{margin-inline:auto;text-align:center}
+.ghost{left:0;right:0;translate:none;display:flex;justify-content:center}
 </style>
 
 </head>
@@ -448,6 +592,13 @@ html.gs .gsap-h{will-change:transform}
 <style>
 @font-face{font-family:'Zeiger Display';src:url(../media/display.woff2) format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'Zeiger Text';src:url(../media/text.woff2) format('woff2');font-weight:400 800;font-display:swap}
+[hidden]{display:none!important}
+.cur{background-color:#0A0A0B;background-image:url(../media/curtain.webp),url(../media/curtain-tile.webp);background-repeat:no-repeat,repeat-y;background-position:top center,top center;background-size:1920px auto,1920px 8px}
+.liq{background:#fff url(../media/liquid-l.webp) center/cover no-repeat}
+.room{background:#A9A9A6 url(../media/wall.webp) center top/1920px auto repeat-y}
+.thumb.k{background:#0D0D0F url(../media/curtain.webp) center top/900px auto}
+@media(max-width:700px){.cur{background-size:1250px auto,1250px 6px}}
+.rack{background:#BDBDBA url(../media/wall.webp) center top/1100px auto}
 </style>
 <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
 <symbol id="i-key" viewBox="0 0 24 24"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></symbol>
@@ -571,64 +722,8 @@ html.gs .gsap-h{will-change:transform}
 <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
 <symbol id="i-scan-search" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></symbol>
 <symbol id="i-move-horizontal" viewBox="0 0 24 24"><path d="m18 8 4 4-4 4"/><path d="M2 12h20"/><path d="m6 8-4 4 4 4"/></symbol>
-<symbol id="gl" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="98" fill="#F7F7F5" stroke="#CDCDC9" stroke-width="1.5"/>
-  <path d="M60 18c-32 16-50 48-48 84 8-30 24-54 54-72 12-7 8-18-6-12Z" fill="#111113"/>
-  <path d="M186 118c-6 36-34 62-68 70 28-14 46-36 54-70 3-12 16-14 14 0Z" fill="#17171A"/>
-  <path d="M64 158c22 16 58 16 80-6" fill="none" stroke="#BDBDB9" stroke-width="5" stroke-linecap="round"/>
-  <ellipse cx="136" cy="50" rx="24" ry="10" transform="rotate(32 136 50)" fill="#fff" stroke="#E2E2DE"/>
-  <path d="M40 104c0-22 8-40 24-54" fill="none" stroke="#DADAD6" stroke-width="3" stroke-linecap="round"/>
-</symbol>
-<symbol id="gd" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="98" fill="#0F0F11" stroke="#3B3B40" stroke-width="1.5"/>
-  <g fill="none" stroke="#25252A" stroke-width="5">
-    <path d="M100 4v192"/><path d="M78 6c-22 62-22 126 0 188"/><path d="M122 6c22 62 22 126 0 188"/>
-    <path d="M56 14c-40 54-40 118 0 172"/><path d="M144 14c40 54 40 118 0 172"/><path d="M34 30c-34 44-34 96 0 140"/><path d="M166 30c34 44 34 96 0 140"/>
-  </g>
-  <path d="M58 20c-30 18-46 48-44 82 8-28 24-52 52-68 12-7 6-20-8-14Z" fill="#EDEDEA"/>
-  <path d="M186 124c-8 32-34 56-64 62 26-12 42-32 52-62 3-11 14-12 12 0Z" fill="#8E8E92"/>
-  <ellipse cx="134" cy="48" rx="20" ry="7" transform="rotate(30 134 48)" fill="#FFFFFF"/>
-</symbol>
-<symbol id="gc" viewBox="0 0 220 240">
-  <path d="M110 6 212 62v116l-102 56L8 178V62Z" fill="#F2F2EF" stroke="#C9C9C5" stroke-width="1.5"/>
-  <path d="M110 6 212 62 110 118 8 62Z" fill="#FAFAF8" stroke="#D5D5D1" stroke-width="1.5"/>
-  <path d="M110 118v116L8 178V62Z" fill="#E2E2DE" stroke="#D5D5D1" stroke-width="1.5"/>
-  <path d="M34 92c20 8 44 22 56 42 4 8-6 14-12 8-14-16-30-26-48-34-8-4-4-20 4-16Z" fill="#111113"/>
-  <path d="M196 128c-14 16-34 30-58 40-8 4-14-8-6-12 22-10 40-22 54-38 8-8 18 2 10 10Z" fill="#1A1A1D"/>
-</symbol>
-<symbol id="gf" viewBox="0 0 200 260">
-  <path d="M26 10c50-12 100-12 148 0-8 56-40 84-58 116 18 34 46 62 58 122-50 14-100 14-148 0 12-60 40-88 58-122C66 94 34 66 26 10Z" fill="#F4F4F1" stroke="#C9C9C5" stroke-width="1.5"/>
-  <path d="M46 26c34-8 76-8 110 0-20 8-82 8-110 0Z" fill="#111113"/>
-  <path d="M96 124c-14 34-38 60-50 104 8-4 12-4 20-2 8-40 28-66 38-98 3-10-5-14-8-4Z" fill="#17171A"/>
-  <path d="M152 214c-6-26-18-44-30-64" fill="none" stroke="#B9B9B5" stroke-width="4" stroke-linecap="round"/>
-</symbol>
-<symbol id="hand" viewBox="0 0 420 240">
-  <path d="M0 74h74v104H0Z" fill="#111113"/>
-  <path d="M66 68h30v116H66Z" fill="#FFFFFF" stroke="#BDBDB9" stroke-width="2"/>
-  <path d="M94 66c24-16 58-24 90-20 12-14 34-18 50-8l150 2c20 0 32 14 32 30s-12 30-32 30l-134 2c10 12 8 28-4 36 10 12 8 28-6 36 8 14 2 30-14 34-26 8-60 8-90 2-16-4-30-10-42-18Z" fill="#DBDBD7" stroke="#8F8F8B" stroke-width="2.5" stroke-linejoin="round"/>
-  <g fill="none" stroke="#8F8F8B" stroke-width="2.5" stroke-linecap="round">
-    <path d="M250 104c-22 2-44 2-64 0"/><path d="M248 142c-20 4-42 4-62 0"/><path d="M240 178c-18 4-36 4-54 0"/>
-    <path d="M184 46c-16 10-24 24-26 40 18-6 34-2 46 10"/>
-    <path d="M352 52c6 10 6 26 0 36"/>
-  </g>
-  <path d="M380 44c14 2 24 12 24 26s-10 24-24 26c-14 0-22-12-22-26s8-26 22-26Z" fill="#2E6BEA"/>
-</symbol>
-<symbol id="dress" viewBox="0 0 120 180">
-  <path d="M60 2c-7 0-9 9-3 13L60 18l3-3" fill="none" stroke="#17171A" stroke-width="3" stroke-linecap="round"/>
-  <path d="M60 18 20 34l40 2 40-2Z" fill="none" stroke="#17171A" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M42 32h7l3 16c5 6 11 6 16 0l3-16h7l6 34-9 16 36 86c-34 12-72 12-106 0l36-86-9-16Z" fill="currentColor"/>
-  <path d="M43 82c11 3 23 3 34 0" fill="none" stroke="#0A0A0B" stroke-width="3" opacity=".55"/>
-  <path d="M46 92 30 164M74 92l16 72M60 94v76" stroke="#0A0A0B" stroke-width="2" opacity=".2"/>
-</symbol>
-<symbol id="drape" viewBox="0 0 980 300">
-  <path d="M120 300C190 180 300 90 470 60c130-22 260 20 330 240Z" fill="#12A848"/>
-  <path d="M250 300c50-100 150-190 260-204 70-8 110 30 130 90-50-34-110-30-150 12-40 44-60 70-90 102Z" fill="#2BE06A"/>
-  <path d="M520 300c20-70 70-120 140-120 60 0 100 50 130 120Z" fill="#0B7A33"/>
-  <path d="M330 300c44-60 120-132 200-146-56 34-110 90-140 146Z" fill="#D9FFE4"/>
-  <path d="M676 214c34 12 58 44 76 86h-40c-8-34-20-62-36-86Z" fill="#2BE06A"/>
-</symbol>
 </svg>
-<header class="nav">
+<header class="nav" id="nav">
   <a class="logo" href="#top"><img src="../media/logo.webp" alt="" width="30" height="30">Stellas</a>
   <ul>
     <li><a href="#what">Суть</a></li><li><a href="#forms">Формы</a></li><li><a href="#errors">Ошибки</a></li><li><a href="#exc">Исключения</a></li><li><a href="#train">Упражнение</a></li><li><a href="#quiz">Тест</a></li>
@@ -644,82 +739,90 @@ html.gs .gsap-h{will-change:transform}
 </header>
 
 <main id="top">
-<section class="cover">
-  <svg class="liquid" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M0 0h1440v900H0Z" fill="#fff"/>
-    <path d="M0 210C210 120 330 350 520 300S800 90 1020 170s270 240 420 160V0H0Z" fill="#F1F1EE"/>
-    <path d="M0 900V600c170-90 300 40 430 120s330 60 470 0 330-80 540 30v150Z" fill="#EFEFEC"/>
-    <path d="M0 96c120-40 210 20 300 94-96-40-190-70-300-44Z" fill="#141416"/>
-    <path d="M1440 760c-90 8-150 56-200 130 60-46 120-80 200-90Z" fill="#141416"/>
-    <path d="M1210 40c66 70 104 124 120 210-40-70-82-136-158-188Z" fill="#DBDBD7"/>
-    <path d="M120 690c58 34 110 84 134 150-48-52-96-94-168-116Z" fill="#D5D5D1"/>
-  </svg>
-  <svg class="float" data-float="-60" style="left:7%;top:46%;width:clamp(70px,9vw,130px)" aria-hidden="true" viewBox="0 0 220 240"><use href="#gc"/></svg>
-  <svg class="float" data-float="80" style="right:8%;top:45%;width:clamp(56px,7vw,104px)" aria-hidden="true" viewBox="0 0 200 260"><use href="#gf"/></svg>
-
-  <div class="balls" aria-hidden="true">
-    <svg class="o" viewBox="0 0 200 200" style="left:9%;top:44%;width:53%"><use href="#gl"/></svg>
-    <svg class="o" viewBox="0 0 200 200" style="left:42%;top:7%;width:47%"><use href="#gl"/></svg>
-    <svg class="o" viewBox="0 0 200 200" style="left:30%;top:28%;width:30%"><use href="#gl"/></svg>
-    <span style="left:22%;top:22%;color:#17171A">d</span>
-    <span style="left:76%;top:23%;color:#2E6BEA">i</span>
-    <span style="left:27%;top:73%;color:#1FD35E">e</span>
-    <span style="left:77%;top:74%;color:#17171A">s</span>
-    <div class="hand l" aria-hidden="true"><svg viewBox="0 0 420 240"><use href="#hand"/></svg></div>
-    <div class="hand r" aria-hidden="true"><svg viewBox="0 0 420 240"><use href="#hand"/></svg></div>
+<section class="room" id="room">
+  <div class="ceil" aria-hidden="true"><i></i><i></i></div>
+  <div class="pil l" aria-hidden="true"><span>d</span><span>i</span></div>
+  <div class="pil r" aria-hidden="true"><span>e</span><span>s</span></div>
+  <div class="pan dia">
+    <div class="ptop">
+      <h1 class="h1">Указательные <span class="b">местоимения</span></h1>
+      <p class="sub">Как показать на что-то словом. <b>И никого не обидеть.</b></p>
+    </div>
+    <div class="dashes pd">
+      <article class="dash"><i><svg class="ic" aria-hidden="true"><use href="#i-pointer"/></svg></i><h3 lang="de">dieser</h3><p class="tx">Этот, вот этот, <b>рядом с тобой</b></p></article>
+      <article class="dash"><i><svg class="ic" aria-hidden="true"><use href="#i-move-right"/></svg></i><h3 lang="de">jener</h3><p class="tx">Тот, <b>дальний</b>, для сравнения</p></article>
+      <article class="dash"><i><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg></i><h3 lang="de">solcher</h3><p class="tx">Такой, <b>весь этот тип</b> вещей</p></article>
+    </div>
+    <div class="ribbon"><a class="btn big" href="#story">Смотреть гайд</a></div>
   </div>
-
-  <div class="ttl">
-    <h1 class="h1">Указательные местоимения</h1>
-    <p class="sub" style="--tx:#68686d;--fg:#0A0A0B"><b>Dieser, jener, solcher.</b> Как показать на что-то словом и никого не обидеть.</p>
-  </div>
-  <div class="ribbon"><a class="btn big" href="#story">Смотреть гайд</a></div>
+  <img class="glh l" src="../media/hand.webp" alt="" aria-hidden="true" width="900" height="470">
+  <img class="glh r" src="../media/hand.webp" alt="" aria-hidden="true" width="900" height="470">
 </section>
 
-<section class="sec dk rib round" id="story">
-  <div class="beam" aria-hidden="true"></div>
+<section class="sec dk cur round" id="story">
   <div class="ghost" aria-hidden="true">die da</div>
+  <div class="vg l" aria-hidden="true">Stellas</div><div class="vg r" aria-hidden="true">Stellas</div>
+  <img class="gl" data-y="-140" data-r="28" src="../media/ball-d.webp" alt="" aria-hidden="true" style="right:-4%;bottom:6%;width:clamp(120px,19vw,300px)">
+  <img class="gl" data-y="110" data-r="-20" src="../media/blob-d.webp" alt="" aria-hidden="true" style="left:-3%;top:22%;width:clamp(90px,13vw,210px)">
   <div class="wrap">
     <div class="head c"><h2 class="h2">Как обидеть человека с ножницами</h2></div>
-    <div class="tcards">
-      <article class="tc" data-rv>
+    <div class="tcards" id="tcards">
+      <article class="tc" data-fan="-5">
         <p><b>Я пошёл в парикмахерскую.</b> В парикмахерской сидела администратор. Администратор спросила, кто меня стриг в прошлый раз.</p>
         <p>Мастера я запомнил. Имя нет.</p>
         <p>Говорю, момент. Сейчас покажу.</p>
-        <svg class="cube ic"><use href="#i-scissors"/></svg>
+        <img class="obj" data-snip src="../media/3i-scissors.webp" alt="" aria-hidden="true">
       </article>
-      <article class="tc d" data-rv>
+      <article class="tc d" data-fan="0">
         <p>Показываю пальцем. Говорю:</p>
         <div class="line"><span class="big" lang="de">die da</span><button class="say" type="button" data-say="die da" aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
         <p>Мастер поднимает голову. <b>В руке ножницы.</b></p>
         <p>Думаю, не расслышала. Говорю громче. Я же вежливый.</p>
-        <svg class="cube ic"><use href="#i-pointer"/></svg>
       </article>
-      <article class="tc" data-rv>
+      <article class="tc" data-fan="5">
         <p><b>Die da это вон та.</b> Про человека рядом так не говорят. Особенно пальцем. Особенно дважды.</p>
         <p>Надо было так:</p>
         <div class="line"><span class="big" lang="de" style="font-size:clamp(30px,3.2vw,46px)">diese Dame</span><button class="say" type="button" data-say="diese Dame dort" aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
         <p>Эта дама.</p>
       </article>
     </div>
-    <p class="moral" data-rv>Стригли меня молча. Чёлку помню до сих пор.</p>
+    <p class="moral" data-words>Стригли меня молча. Чёлку помню до сих пор.</p>
     <p class="sub c" style="margin:16px auto 0">Расскажу, как показывать словами. Чтобы палец остался без работы.</p>
   </div>
 </section>
 
 <section class="sec dk" id="route">
+  <div class="vg l" aria-hidden="true">Route</div><div class="vg r" aria-hidden="true">Route</div>
   <div class="wrap">
     <div class="head c"><h2 class="h2">Маршрут</h2><p class="sub">Восемь остановок. <b>Зубрить не придётся.</b></p></div>
     <nav class="steps" aria-label="Маршрут по гайду">
-      <a class="stp" href="#story" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-scissors"/></svg></i><span><b>Провал</b><span class="d">Что бывает, если тыкать пальцем</span></span><em>1</em></a>
-      <a class="stp" href="#what" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-pointer"/></svg></i><span><b>Что это</b><span class="d">Слово вместо пальца</span></span><em>2</em></a>
-      <a class="stp" href="#why" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></i><span><b>Зачем</b><span class="d">Выбрать, сравнить, не повторяться</span></span><em>3</em></a>
-      <a class="stp" href="#forms" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-blocks"/></svg></i><span><b>Формы</b><span class="d">Четыре семьи и конструктор</span></span><em>4</em></a>
-      <a class="stp" href="#errors" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-circle-alert"/></svg></i><span><b>Ошибки</b><span class="d">Где падают русскоязычные</span></span><em>5</em></a>
-      <a class="stp" href="#exc" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-crosshair"/></svg></i><span><b>Исключения</b><span class="d">Три клетки, которые кусаются</span></span><em>6</em></a>
-      <a class="stp" href="#train" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-dumbbell"/></svg></i><span><b>Тренировка</b><span class="d">Упражнение и тест</span></span><em>7</em></a>
-      <a class="stp" href="#cheat" data-rv><i class="ti"><svg class="ic" aria-hidden="true"><use href="#i-list-checks"/></svg></i><span><b>Итог</b><span class="d">Вся тема на одном экране</span></span><em>8</em></a>
+      <a class="stp" href="#story"><i class="ti"><img src="../media/3i-scissors.webp" alt="" loading="lazy"></i><span><b>Провал</b><span class="d">Что бывает, если тыкать пальцем</span></span><em>1</em></a>
+      <a class="stp" href="#what"><i class="ti"><img src="../media/3i-pointer.webp" alt="" loading="lazy"></i><span><b>Что это</b><span class="d">Слово вместо пальца</span></span><em>2</em></a>
+      <a class="stp" href="#why"><i class="ti"><img src="../media/3i-target.webp" alt="" loading="lazy"></i><span><b>Зачем</b><span class="d">Выбрать, сравнить, не повторяться</span></span><em>3</em></a>
+      <a class="stp" href="#forms"><i class="ti"><img src="../media/3i-blocks.webp" alt="" loading="lazy"></i><span><b>Формы</b><span class="d">Четыре семьи и конструктор</span></span><em>4</em></a>
+      <a class="stp" href="#errors"><i class="ti"><img src="../media/3i-circle-alert.webp" alt="" loading="lazy"></i><span><b>Ошибки</b><span class="d">Где падают русскоязычные</span></span><em>5</em></a>
+      <a class="stp" href="#exc"><i class="ti"><img src="../media/3i-crosshair.webp" alt="" loading="lazy"></i><span><b>Исключения</b><span class="d">Три клетки, которые кусаются</span></span><em>6</em></a>
+      <a class="stp" href="#train"><i class="ti"><img src="../media/3i-dumbbell.webp" alt="" loading="lazy"></i><span><b>Тренировка</b><span class="d">Упражнение и тест</span></span><em>7</em></a>
+      <a class="stp" href="#cheat"><i class="ti"><img src="../media/3i-list-checks.webp" alt="" loading="lazy"></i><span><b>Итог</b><span class="d">Вся тема на одном экране</span></span><em>8</em></a>
     </nav>
+  </div>
+</section>
+
+<section class="dies liq" id="dies">
+  <div class="dstick">
+    <img class="gl" data-y="-90" data-r="24" src="../media/cube-l.webp" alt="" aria-hidden="true" style="left:8%;top:62%;width:clamp(76px,11vw,170px)">
+    <img class="gl" data-y="90" data-r="-22" src="../media/hour-l.webp" alt="" aria-hidden="true" style="right:9%;top:63%;width:clamp(60px,8vw,130px)">
+    <div class="balls" id="balls" aria-hidden="true">
+      <img class="o" src="../media/ball-l.webp" alt="" style="left:9%;top:44%;width:53%">
+      <img class="o" src="../media/ball-l.webp" alt="" style="left:42%;top:7%;width:47%">
+      <img class="o" src="../media/ball-l.webp" alt="" style="left:30%;top:28%;width:30%">
+      <span style="left:22%;top:22%;color:#17171A">d</span>
+      <span style="left:76%;top:23%;color:#2E6BEA">i</span>
+      <span style="left:27%;top:73%;color:#1FD35E">e</span>
+      <span style="left:77%;top:74%;color:#17171A">s</span>
+    </div>
+    <div class="dcap"><h2 class="h2 nosplit"><span lang="de">Dies</span> значит <span class="b">это</span></h2><p class="sub" style="--tx:#5f5f64">Самое короткое слово целой семьи.</p></div>
+    <img class="glh2 l" src="../media/hand.webp" alt="" aria-hidden="true"><img class="glh2 r" src="../media/hand.webp" alt="" aria-hidden="true">
   </div>
 </section>
 
@@ -727,15 +830,15 @@ html.gs .gsap-h{will-change:transform}
   <div class="scrolly" id="scrolly">
     <div class="stick">
       <div class="wrap" style="width:100%">
-        <div class="head" style="margin-bottom:clamp(12px,2.4vh,30px)"><h2 class="h2" style="font-size:clamp(29px,4.4vw,62px)">Артикль называет. <span class="b">Это слово показывает.</span></h2></div>
+        <div class="head" style="margin-bottom:clamp(12px,2.4vh,30px)"><h2 class="h2 nosplit" style="font-size:clamp(29px,4.4vw,62px)">Артикль называет. <span class="b">Это слово показывает.</span></h2></div>
         <div class="stage">
           <div class="rack" aria-hidden="true">
             <div class="floor"></div><div class="rail"></div>
-            <div class="jk" data-j="a"><svg viewBox="0 0 120 180"><use href="#dress"/></svg><u>такое</u></div>
-            <div class="jk" data-j="b"><svg viewBox="0 0 120 180"><use href="#dress"/></svg><u>это</u></div>
-            <div class="jk" data-j="c"><svg viewBox="0 0 120 180"><use href="#dress"/></svg><u>то</u></div>
+            <div class="jk" data-j="a"><img src="../media/dress-g.webp" alt=""><u>такое</u></div>
+            <div class="jk" data-j="b"><img src="../media/dress-b.webp" alt=""><u>это</u></div>
+            <div class="jk" data-j="c"><img src="../media/dress-g.webp" alt=""><u>то</u></div>
             <div class="q" id="sq" style="left:50%;translate:-50% 0">?</div>
-            <div class="pt" id="pt"><svg viewBox="0 0 420 240"><use href="#hand"/></svg></div>
+            <div class="pt" id="pt"><img src="../media/hand.webp" alt=""></div>
           </div>
           <div aria-live="polite">
             <div class="chips" id="schips" lang="de"></div>
@@ -749,35 +852,47 @@ html.gs .gsap-h{will-change:transform}
   </div>
 </section>
 
-<section class="sec gr round" id="why">
+<section class="sec dk cur round" id="why">
   <div class="ghost" aria-hidden="true">wozu</div>
+  <div class="vg l" aria-hidden="true">zeigen</div><div class="vg r" aria-hidden="true">zeigen</div>
   <div class="wrap">
     <div class="head c"><h2 class="h2">Зачем, если есть der</h2><p class="sub">По-немецки это <b lang="de">Demonstrativ&shy;pronomen</b>. Уровень <b class="n">A2</b>. Работы у него три.</p></div>
-    <div class="dashes">
-      <article class="dash" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></i><h3>Выбрать</h3><p class="tx">Вещей много. Нужна одна.</p>
-        <div class="ex"><p lang="de"><b>Welche Tasche? Diese hier.</b><span lang="ru">Какая сумка? Вот эта.</span></p><button class="say" type="button" data-say="Welche Tasche? Diese hier." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
-      <article class="dash" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></i><h3>Сравнить</h3><p class="tx">Одно близко. Другое дальше.</p>
-        <div class="ex"><p lang="de"><b>Dieses Café ist billiger als jenes.</b><span lang="ru">Это кафе дешевле, чем то.</span></p><button class="say" type="button" data-say="Dieses Café ist billiger als jenes." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
-      <article class="dash" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg></i><h3>Не повторяться</h3><p class="tx">Слово уже звучало. Хватит.</p>
-        <div class="ex"><p lang="de"><b>Der Rock? Den kaufe ich nicht.</b><span lang="ru">Юбка? Эту не куплю.</span></p><button class="say" type="button" data-say="Der Rock? Den kaufe ich nicht." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
+    <div class="srv three">
+      <div class="svw" data-rv><div class="thumb w"><img class="gl2" src="../media/ball-l.webp" alt=""><img class="ico" src="../media/3i-target.webp" alt=""></div>
+        <article class="sv"><h3>Выбрать</h3><p class="tx c">Вещей много. Нужна одна.</p>
+        <div class="ex"><p lang="de"><b>Welche Tasche? Diese hier.</b><span lang="ru">Какая сумка? Вот эта.</span></p><button class="say" type="button" data-say="Welche Tasche? Diese hier." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article></div>
+      <div class="svw" data-rv><div class="thumb k"><img class="gl2" src="../media/ball-d.webp" alt=""><img class="ico inv" src="../media/3i-scale.webp" alt=""></div>
+        <article class="sv"><h3>Сравнить</h3><p class="tx c">Одно близко. Другое дальше.</p>
+        <div class="ex"><p lang="de"><b>Dieses Café ist billiger als jenes.</b><span lang="ru">Это кафе дешевле, чем то.</span></p><button class="say" type="button" data-say="Dieses Café ist billiger als jenes." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article></div>
+      <div class="svw" data-rv><div class="thumb g"><img class="gl2" src="../media/cube-l.webp" alt=""><img class="ico" src="../media/3i-repeat.webp" alt=""></div>
+        <article class="sv"><h3>Не повторяться</h3><p class="tx c">Слово уже звучало. Хватит.</p>
+        <div class="ex"><p lang="de"><b>Der Rock? Den kaufe ich nicht.</b><span lang="ru">Юбка? Эту не куплю.</span></p><button class="say" type="button" data-say="Der Rock? Den kaufe ich nicht." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article></div>
     </div>
     <p class="sub c" style="margin-top:30px;max-width:54ch">Обрати внимание. <b>Der Rock</b> мужского рода, а по-русски юбка женского. Род всё равно берём немецкий.</p>
+    <div class="cta"><a class="lnk" href="#forms">Узнать формы</a></div>
   </div>
 </section>
 
-<section class="sec lt" id="forms">
+<section class="sec dk cur" id="forms">
   <div class="wrap">
-    <div class="head c"><h2 class="h2">Четыре семьи</h2><p class="sub">Выглядят страшно. <b>Собираются просто.</b></p></div>
+    <div class="tabs" id="ftabs" role="tablist" aria-label="Семьи местоимений">
+      <button class="opt" role="tab" type="button" aria-selected="true" aria-pressed="true" data-f="0">Хвост от артикля</button><span aria-hidden="true"></span>
+      <button class="opt" role="tab" type="button" aria-selected="false" aria-pressed="false" data-f="1">Двойники</button><span aria-hidden="true"></span>
+      <button class="opt" role="tab" type="button" aria-selected="false" aria-pressed="false" data-f="2">Двухэтажные</button><span aria-hidden="true"></span>
+      <button class="opt" role="tab" type="button" aria-selected="false" aria-pressed="false" data-f="3">Упрямые</button>
+    </div>
+    <h2 class="giant" id="fgiant">четыре семьи</h2>
+    <div class="fpanel">
 
-    <div class="fam">
-      <div><h3 class="h3">Семья 1. <span class="b">Хвост от артикля</span></h3>
+    <div class="fam" data-f="0">
+      <div><h3 class="h3">Семья 1. <span class="b2">Хвост от артикля</span></h3>
         <p class="tx"><b>Dieser, jener, jeder, solcher.</b> Берёшь основу. Смотришь на артикль. Забираешь его хвост.</p>
         <p class="tx"><b>die</b> даёт <span class="nw">-e</span>. <b>der</b> даёт <span class="nw">-er</span>. <b>den</b> даёт <span class="nw">-en</span>. <b>dem</b> даёт <span class="nw">-em</span>. <b>das</b> и <b>des</b> дают <span class="nw">-es</span>.</p>
       </div>
       <div>
         <div class="bld" id="bld">
           <div class="opts" id="bw"></div><div class="opts" id="bn"></div><div class="opts" id="bc"></div>
-          <div class="fabr" aria-live="polite"><span class="tok" id="bart" lang="de">dem</span><i>→</i><span class="tok res" id="bres" lang="de">diesem</span></div>
+          <div class="fabr" id="fabr" aria-live="polite"><span class="tok" id="bart" lang="de">dem</span><i>→</i><span class="tok res" id="bres" lang="de">diesem</span></div>
           <div class="sent"><p id="bs" lang="de"></p><button class="say" id="bsay" type="button" aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
           <p class="warn" id="bw2"></p>
         </div>
@@ -785,8 +900,8 @@ html.gs .gsap-h{will-change:transform}
       </div>
     </div>
 
-    <div class="fam">
-      <div><h3 class="h3">Семья 2. <span class="b">Двойники артикля</span></h3>
+    <div class="fam" data-f="1">
+      <div><h3 class="h3">Семья 2. <span class="b2">Двойники артикля</span></h3>
         <p class="tx"><b>Der, die, das</b> без существительного и с ударением. Часто стоят первыми.</p>
         <p class="tx">Почти всё копирует артикль. Но пять форм отрастили хвост.</p>
         <div class="line" style="margin-top:16px;justify-content:space-between;max-width:420px"><p lang="de"><b>Die Creme? Die nehme ich.</b><br><span lang="ru" class="tx">Крем? Вот его возьму.</span></p><button class="say" type="button" data-say="Die Creme? Die nehme ich." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
@@ -803,8 +918,8 @@ html.gs .gsap-h{will-change:transform}
       </div>
     </div>
 
-    <div class="fam">
-      <div><h3 class="h3">Семья 3. <span class="b">Двухэтажные</span></h3>
+    <div class="fam" data-f="2">
+      <div><h3 class="h3">Семья 3. <span class="b2">Двухэтажные</span></h3>
         <p class="tx"><b>Derselbe</b> это тот же самый. <b>Derjenige</b> это тот, который. Первый этаж склоняется как артикль. Второй как слабое прилагательное.</p>
         <div class="line" style="margin-top:16px;justify-content:space-between;max-width:440px"><p lang="de"><b>Sie trägt dieselbe Tasche wie ich.</b><br><span lang="ru" class="tx">У неё та же сумка, что у меня. Это война.</span></p><button class="say" type="button" data-say="Sie trägt dieselbe Tasche wie ich." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
         <div class="line" style="margin-top:14px;justify-content:space-between;max-width:440px"><p lang="de"><b>Diejenige, die den Kaffee getrunken hat, kocht neuen.</b><br><span lang="ru" class="tx">Та, кто выпила кофе, варит новый. Закон офиса.</span></p><button class="say" type="button" data-say="Diejenige, die den Kaffee getrunken hat, kocht neuen." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
@@ -821,21 +936,24 @@ html.gs .gsap-h{will-change:transform}
       </div>
     </div>
 
-    <div class="fam">
-      <div><h3 class="h3">Семья 4. <span class="b">Упрямые</span></h3>
+    <div class="fam" data-f="3">
+      <div><h3 class="h3">Семья 4. <span class="b2">Упрямые</span></h3>
         <p class="tx"><b>Selbst</b> и <b>selber</b> значат сам. Не меняются никогда. Завидую. <b>Selber</b> звучит разговорнее.</p>
       </div>
-      <div class="dashes d2" style="margin-top:30px">
-        <article class="dash" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg></i><h3>После слова</h3><div class="ex" style="margin-top:0;border:0;padding:0"><p lang="de"><b>Das mache ich selbst.</b><span lang="ru">Это я сделаю сам.</span></p><button class="say" type="button" data-say="Das mache ich selbst." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
-        <article class="dash" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></i><h3>После местоимения</h3><div class="ex" style="margin-top:0;border:0;padding:0"><p lang="de"><b>Sie selbst kommt heute nicht.</b><span lang="ru">Сама она сегодня не придёт.</span></p><button class="say" type="button" data-say="Sie selbst kommt heute nicht." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
+      <div class="dashes d2 onk" style="margin-top:30px">
+        <article class="dash"><i><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg></i><h3>После слова</h3><div class="ex" style="margin-top:0;border:0;padding:0"><p lang="de"><b>Das mache ich selbst.</b><span lang="ru">Это я сделаю сам.</span></p><button class="say" type="button" data-say="Das mache ich selbst." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
+        <article class="dash"><i><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></i><h3>После местоимения</h3><div class="ex" style="margin-top:0;border:0;padding:0"><p lang="de"><b>Sie selbst kommt heute nicht.</b><span lang="ru">Сама она сегодня не придёт.</span></p><button class="say" type="button" data-say="Sie selbst kommt heute nicht." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article>
       </div>
+    </div>
     </div>
   </div>
 </section>
 
-<section class="sec dk rib round" id="errors">
-  <div class="beam" aria-hidden="true"></div>
+<section class="sec dk cur round" id="errors">
   <div class="ghost" aria-hidden="true">Fehler</div>
+  <div class="vg l" aria-hidden="true">Fehler</div><div class="vg r" aria-hidden="true">Fehler</div>
+  <img class="gl" data-y="-160" data-r="-30" src="../media/hour-d.webp" alt="" aria-hidden="true" style="left:1%;top:8%;width:clamp(70px,10vw,170px)">
+  <img class="gl" data-y="140" data-r="24" src="../media/blob-d2.webp" alt="" aria-hidden="true" style="right:-3%;top:34%;width:clamp(90px,14vw,230px)">
   <div class="wrap">
     <div class="head c"><h2 class="h2">Где падают русскоязычные</h2><p class="sub">В русском одно слово <b>это</b>. В немецком развилка.</p></div>
     <div class="fork" id="fork">
@@ -875,12 +993,14 @@ html.gs .gsap-h{will-change:transform}
 </section>
 
 <section class="sec lt dia" id="exc">
+  <div class="ghost" aria-hidden="true">Ausnahmen</div>
+  <img class="gl" data-y="-100" data-r="26" src="../media/blob-l.webp" alt="" aria-hidden="true" style="left:-3%;bottom:8%;width:clamp(90px,14vw,230px)">
   <div class="wrap">
     <div class="head c"><h2 class="h2">Исключения</h2><p class="sub">Их мало. <b>Кусаются больно.</b></p></div>
     <div class="exc">
       <article class="card solchb" data-rv>
         <div><h3>Solch ведёт себя по-разному</h3><p class="tx">Стоит перед <b>ein</b>: хвоста нет. Стоит после <b>ein</b>: хвост как у прилагательного.</p>
-          <div class="opts" id="sopts" style="margin-top:16px"><button class="opt" type="button" aria-pressed="true" data-s="0">Перед ein</button><button class="opt" type="button" aria-pressed="false" data-s="1">После ein</button><button class="opt" type="button" aria-pressed="false" data-s="2">Разговорно</button></div>
+          <div class="arws"><button class="arw" type="button" id="sp" aria-label="Предыдущий вариант"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg></button><span id="slab" class="tx" aria-live="polite">Перед ein</span><button class="arw" type="button" id="sn" aria-label="Следующий вариант"><svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></button></div>
         </div>
         <div>
           <div class="row-b" id="srow" lang="de"></div>
@@ -894,11 +1014,14 @@ html.gs .gsap-h{will-change:transform}
   </div>
 </section>
 
-<section class="sec gr round" id="train">
+<section class="sec dk cur round" id="train">
+  <div class="vg l" aria-hidden="true">Übung</div><div class="vg r" aria-hidden="true">Übung</div>
+  <img class="gl" data-y="-120" data-r="20" src="../media/ball-d.webp" alt="" aria-hidden="true" style="left:-5%;top:30%;width:clamp(120px,20vw,320px)">
+  <img class="gl" data-y="130" data-r="-26" src="../media/cube-d.webp" alt="" aria-hidden="true" style="right:-2%;bottom:12%;width:clamp(90px,14vw,220px)">
   <div class="wrap">
-    <div class="head c"><h2 class="h2">Теперь твоя очередь</h2><p class="sub">Восемь пропусков. <b>Проверка и разбор внизу.</b></p></div>
     <div class="tabletw">
       <div class="tablet">
+        <div class="thead"><h2 class="h2 nosplit">Теперь твоя очередь <i class="tog" aria-hidden="true"><b></b></i></h2><p class="sub">Восемь пропусков. <b>Проверка и разбор внизу.</b></p></div>
         <div class="exr" id="exr"></div>
         <div class="exf"><button class="btn" type="button" id="excheck">Проверить</button><span class="exs" id="exs" aria-live="polite"></span></div>
       </div>
@@ -907,39 +1030,42 @@ html.gs .gsap-h{will-change:transform}
 </section>
 
 <section class="sec lt" id="quiz">
+  <div class="ghost" aria-hidden="true">Test</div>
   <div class="wrap">
     <div class="head c"><h2 class="h2">Шесть вопросов</h2><p class="sub">Шпаргалка ниже. <b>Подглядывать нельзя.</b></p></div>
     <div class="qz" id="qz" aria-live="polite"></div>
   </div>
 </section>
 
-<section class="sec dk round" id="cheat">
+<section class="sec dk cur round" id="cheat">
+  <div class="vg l" aria-hidden="true">Spick</div><div class="vg r" aria-hidden="true">Spick</div>
   <div class="wrap">
     <div class="head c"><h2 class="h2">Шпаргалка</h2></div>
     <div class="cheat">
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-pointer"/></svg></i><p>Показать вот это →</p><strong lang="de">dieser</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></i><p>Сравнить с дальним →</p><strong lang="de">jener</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg></i><p>Похожие вещи, такие →</p><strong lang="de">solcher, so ein</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></i><p>Каждый по одному →</p><strong lang="de">jeder</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-replace-all"/></svg></i><p>Заменить слово →</p><strong lang="de">der, die, das</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-link-2"/></svg></i><p>Тот же самый предмет →</p><strong lang="de">derselbe</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-user-check"/></svg></i><p>Тот, который →</p><strong lang="de">derjenige, der</strong></div>
-      <div class="ch" data-rv><i><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg></i><p>Сам или даже →</p><strong lang="de">selbst</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-pointer.webp" alt=""></i><p>Показать вот это →</p><strong lang="de">dieser</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-scale.webp" alt=""></i><p>Сравнить с дальним →</p><strong lang="de">jener</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-copy.webp" alt=""></i><p>Похожие вещи, такие →</p><strong lang="de">solcher, so ein</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-users.webp" alt=""></i><p>Каждый по одному →</p><strong lang="de">jeder</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-replace-all.webp" alt=""></i><p>Заменить слово →</p><strong lang="de">der, die, das</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-link-2.webp" alt=""></i><p>Тот же самый предмет →</p><strong lang="de">derselbe</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-user-check.webp" alt=""></i><p>Тот, который →</p><strong lang="de">derjenige, der</strong></div>
+      <div class="ch" data-rv><i><img src="../media/3i-hand.webp" alt=""></i><p>Сам или даже →</p><strong lang="de">selbst</strong></div>
     </div>
-    <p class="moral" style="margin-top:clamp(48px,6vw,84px)" data-rv>Der называет. Dieser показывает.<br><span class="g">Палец можно убрать.</span></p>
+    <p class="moral" style="margin-top:clamp(48px,6vw,84px)" data-words>Der называет. Dieser показывает. Палец можно убрать.</p>
   </div>
 </section>
 
 
-<section class="sec dk rib round end" id="thanks">
-  <div class="beam" aria-hidden="true"></div>
+<section class="sec dk cur round end" id="thanks">
+  <img class="gl" data-y="-110" data-r="22" src="../media/ball-d.webp" alt="" aria-hidden="true" style="left:4%;top:30%;width:clamp(90px,15vw,250px)">
+  <img class="gl" data-y="-70" data-r="-18" src="../media/blob-d.webp" alt="" aria-hidden="true" style="right:5%;top:12%;width:clamp(70px,10vw,170px)">
   <div class="ghost" aria-hidden="true">спасибо</div>
   <div class="wrap c">
     <p class="h2" style="letter-spacing:.42em;font-size:clamp(20px,3vw,38px);font-family:var(--text);font-weight:400;color:#C9C9CE;margin-top:clamp(40px,6vw,90px);hyphens:none">за просмотр</p>
     <p class="sub" style="margin-top:26px">Попробуй сегодня сказать <b lang="de">diese</b> вместо пальца. Один раз. Этого хватит.</p>
     <div class="cta"><a class="btn" href="#quiz">Пройти тест ещё раз</a><a class="lnk" href="#cheat">Шпаргалка</a></div>
   </div>
-  <svg class="drape" viewBox="0 0 980 300" aria-hidden="true"><use href="#drape"/></svg>
+  <img class="drape" src="../media/satin.webp" alt="" aria-hidden="true" loading="lazy">
 </section>
 
 </main>
@@ -998,8 +1124,10 @@ function zeigerInit(){
     if(G) G.from($$('.chip',$('#schips')),{y:18,scale:.9,duration:.42,ease:'back.out(2.2)',stagger:.05});
   }
   $('#ssay').addEventListener('click',function(){ say(STEPS[Math.max(cur,0)].s,this); });
+  var lastY = 0, navEl = $('#nav');
   function onScroll(){
     var h = document.documentElement, p = h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    var yNow = h.scrollTop; if(Math.abs(yNow-lastY)>6){ navEl.classList.toggle('away', yNow>lastY && yNow>260 && !(mn&&mn.open)); lastY=yNow; }
     $('#pbar').style.transform = 'scaleX('+p+')';
     var r = sc.getBoundingClientRect(), span = r.height-innerHeight;
     var q = Math.max(0,Math.min(.999,-r.top/span));
@@ -1019,7 +1147,7 @@ function zeigerInit(){
     RUP = {dieser:{m:['этот','этого','этому','этого'],f:['эта','эту','этой','этой'],p:['эти','этих','этим','этих']},
            jener:{m:['тот','того','тому','того'],f:['та','ту','той','той'],p:['те','тех','тем','тех']},
            jeder:{m:['каждый','каждого','каждому','каждого'],f:['каждая','каждую','каждой','каждой'],p:['','','','']}};
-  var bs = {w:'dieser',g:'m',c:2}, bText = '';
+  var bs = {w:'dieser',g:'m',c:2}, bText = '', bReady = false;
   function bopts(host,items,get,set,cls){
     host.innerHTML = items.map(function(it){ return '<button type="button" class="opt '+(cls?cls(it):'')+'" data-v="'+it.v+'" lang="de">'+it.t+'</button>'; }).join('');
     $$('button',host).forEach(function(b){ b.addEventListener('click',function(){ set(b.dataset.v); render(); }); });
@@ -1043,18 +1171,28 @@ function zeigerInit(){
     $('#bw2').textContent = w==='jeder' ? T('Jeder живёт только в единственном числе. Поэтому die Leute выключены.') : '';
     bw._sync();bn._sync();bc._sync();
     pop($('#bres'));
+    if(G&&MP&&bReady){ var fb=$('#fabr'),fr=fb.getBoundingClientRect(),a0=$('#bart b').getBoundingClientRect(),a1=$('#bres b').getBoundingClientRect(),fl=document.createElement('span'); fl.className='flyer '+CC[c]; fl.textContent=end; fl.style.left=(a0.left-fr.left)+'px'; fl.style.top=(a0.top-fr.top)+'px'; fb.appendChild(fl); var dx=a1.left-a0.left,dy=a1.top-a0.top; G.set($('#bres b'),{opacity:0}); G.to(fl,{motionPath:{path:[{x:0,y:0},{x:dx/2,y:Math.min(0,dy)-46},{x:dx,y:dy}],curviness:1.4},duration:.62,ease:'power2.inOut',onComplete:function(){ fl.remove(); G.set($('#bres b'),{opacity:1}); pop($('#bres b')); }}); }
+    bReady=true;
   }
   $('#bsay').addEventListener('click',function(){ say(bText,this); });
   render();
+
+  /* family tabs */
+  var fams=$$('.fam'), GI=['хвост','двойники','этажи','упрямые'], ft=$$('#ftabs .opt');
+  function setFam(i,anim){ fams.forEach(function(f,k){ f.hidden = k!==i; }); ft.forEach(function(b,k){ b.setAttribute('aria-pressed',String(k===i)); b.setAttribute('aria-selected',String(k===i)); });
+    $('#fgiant').textContent=GI[i];
+    if(anim&&G){ G.from($('#fgiant'),{yPercent:30,duration:.55,ease:'back.out(2)'}); G.from(fams[i].children,{y:34,duration:.55,ease:'power3.out',stagger:.08}); ScrollTrigger.refresh(); } }
+  ft.forEach(function(b,k){ b.addEventListener('click',function(){ setFam(k,true); }); });
+  setFam(0,false);
 
   /* solch */
   var SO=[{c:[['Solch','p'],['eine'],['Arbeit','n']],d:'Solch eine Arbeit möchte ich nicht.',r:'Такую работу я не хочу.'},
           {c:[['Ein'],['solches','p'],['Haus','n']],d:'Ein solches Haus ist teuer.',r:'Такой дом стоит дорого.'},
           {c:[['So','p'],['ein'],['Kleid','n']],d:'So ein Kleid will ich auch.',r:'Такое платье я тоже хочу.'}], si=0;
   function drawS(){ var s=SO[si]; $('#srow').innerHTML=s.c.map(function(c){return '<span class="chip '+(c[1]||'')+'">'+c[0]+'</span>';}).join('');
-    $('#sde').textContent=s.d; $('#sru2').textContent=T(s.r); $$('#sopts .opt').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.s===si));});
+    $('#sde').textContent=s.d; $('#sru2').textContent=T(s.r); $('#slab').textContent=['Перед ein','После ein','Разговорно'][si];
     if(G) G.from($$('.chip',$('#srow')),{y:14,duration:.4,ease:'back.out(2)',stagger:.06}); }
-  $$('#sopts .opt').forEach(function(b){ b.addEventListener('click',function(){ si=+b.dataset.s; drawS(); }); });
+  $('#sp').addEventListener('click',function(){ si=(si+2)%3; drawS(); }); $('#sn').addEventListener('click',function(){ si=(si+1)%3; drawS(); });
   $('#ss2').addEventListener('click',function(){ say(SO[si].d,this); }); drawS();
 
   /* twins grow their tails */
@@ -1165,7 +1303,7 @@ function zeigerInit(){
   /* dock */
   var dock=$('#dock'), price=$('#price');
   if(dock&&price){ var past=false,at=false; function upd(){ var s=past&&!at; dock.classList.toggle('show',s); dock.setAttribute('aria-hidden',String(!s)); $('a',dock).tabIndex=s?0:-1; }
-    new IntersectionObserver(function(es){ es.forEach(function(en){ past=!en.isIntersecting&&en.boundingClientRect.top<0; upd(); }); }).observe($('.cover'));
+    new IntersectionObserver(function(es){ es.forEach(function(en){ past=!en.isIntersecting&&en.boundingClientRect.top<0; upd(); }); }).observe($('#room'));
     new IntersectionObserver(function(es){ es.forEach(function(en){ at=en.isIntersecting; upd(); }); }).observe(price); }
 
   /* strike-through draws in when a trap arrives */
@@ -1175,8 +1313,44 @@ function zeigerInit(){
     ScrollTrigger.batch('[data-rv]',{start:'top 92%',once:true,onEnter:function(b){ G.fromTo(b,{y:46,scale:.97},{y:0,scale:1,duration:.75,ease:'back.out(1.5)',stagger:.09,overwrite:true}); }});
     if(ST) $$('.h2:not(.nosplit)').forEach(function(h){ if(h.closest('.stick')) return; var s=new SplitText(h,{type:'words',wordsClass:'wd'}); G.from(s.words,{yPercent:50,rotation:4,duration:.8,ease:'back.out(1.9)',stagger:.05,scrollTrigger:{trigger:h,start:'top 90%',once:true}}); });
     $$('.snap').forEach(function(s,i){ G.fromTo($('.parts b',s),{x:-34},{x:0,duration:.7,ease:'back.out(2)',delay:i*.08,scrollTrigger:{trigger:'#snaps',start:'top 84%',once:true}}); G.fromTo($('.parts i',s),{x:34},{x:0,duration:.7,ease:'back.out(2)',delay:i*.08,scrollTrigger:{trigger:'#snaps',start:'top 84%',once:true}}); });
+    /* glass floats against the scroll */
+    $$('.gl[data-y]').forEach(function(g){ G.to(g,{y:+g.dataset.y,rotation:+g.dataset.r,ease:'none',scrollTrigger:{trigger:g.closest('section'),start:'top bottom',end:'bottom top',scrub:1}}); });
+    $$('.ghost').forEach(function(g,i){ G.fromTo(g,{x:i%2?70:-70},{x:i%2?-70:70,ease:'none',scrollTrigger:{trigger:g.closest('section'),start:'top bottom',end:'bottom top',scrub:1}}); });
+    $$('.vg').forEach(function(g,i){ G.fromTo(g,{yPercent:i%2?-14:14},{yPercent:i%2?14:-14,ease:'none',scrollTrigger:{trigger:g.closest('section'),start:'top bottom',end:'bottom top',scrub:1}}); });
+    $$('.sec.round').forEach(function(r){ G.fromTo(r,{clipPath:'inset(5% 4% 0% 4% round 40px)'},{clipPath:'inset(0% 0% 0% 0% round 40px)',ease:'none',scrollTrigger:{trigger:r,start:'top bottom',end:'top 45%',scrub:1}}); });
+    /* route: tiles pop, connectors draw */
+    ScrollTrigger.batch('.stp',{start:'top 90%',once:true,onEnter:function(b){ b.forEach(function(x){ x.classList.add('in'); }); G.fromTo(b,{y:40,scale:.94},{y:0,scale:1,duration:.65,ease:'back.out(1.8)',stagger:.08,overwrite:true}); G.fromTo(b.map(function(x){return $('.ti img',x);}),{scale:.4,rotation:-24},{scale:1,rotation:0,duration:.8,ease:'elastic.out(1,.55)',stagger:.08,delay:.15}); }});
+    /* story cards fan out */
+    if(innerWidth>1020){ $$('[data-fan]').forEach(function(c){ var d=+c.dataset.fan; G.fromTo(c,{rotation:d,y:Math.abs(d)*10,xPercent:d*-3},{rotation:0,y:0,xPercent:0,ease:'none',scrollTrigger:{trigger:'#tcards',start:'top 92%',end:'top 38%',scrub:1}}); }); }
+    else ScrollTrigger.batch('[data-fan]',{start:'top 90%',once:true,onEnter:function(b){ G.fromTo(b,{y:46},{y:0,duration:.7,ease:'back.out(1.5)',stagger:.1}); }});
+    var snip=$('[data-snip]'); if(snip) G.fromTo(snip,{rotation:-18},{rotation:18,duration:.35,ease:'sine.inOut',yoyo:true,repeat:-1,repeatDelay:.5});
+    /* moral lines light up word by word */
+    if(ST) $$('[data-words]').forEach(function(m){ var s=new SplitText(m,{type:'words',wordsClass:'wd'}); G.fromTo(s.words,{color:'#47474D'},{color:'#FFFFFF',stagger:.3,ease:'none',scrollTrigger:{trigger:m,start:'top 88%',end:'top 52%',scrub:1}}); });
+    /* dies: pinned, letters and glass assemble */
+    var dies=$('#dies');
+    if(dies){ var tl=G.timeline({scrollTrigger:{trigger:dies,start:'top top',end:'+=120%',pin:$('.dstick',dies),scrub:1,anticipatePin:1}});
+      var L=$$('#balls span'),O=$$('#balls img.o');
+      G.set(L,{translate:'none',xPercent:-50,yPercent:-50});
+      tl.fromTo(O,{scale:.25,y:function(i){return [140,-120,0][i];}},{scale:1,y:0,duration:1,ease:'back.out(1.5)',stagger:.08},0)
+        .fromTo(L,{x:function(i){return [-420,420,-420,420][i];},y:function(i){return [-300,-300,300,300][i];},rotation:function(i){return [-70,60,50,-60][i];},scale:.5},{x:0,y:0,rotation:0,scale:1,duration:1.1,ease:'power3.out',stagger:.09},.15)
+        .fromTo('.dcap',{y:70},{y:0,duration:.8,ease:'back.out(1.6)'},.75)
+        .fromTo('.glh2.l',{xPercent:-90},{xPercent:0,duration:.9,ease:'power3.out'},1.0)
+        .fromTo('.glh2.r',{xPercent:90},{xPercent:0,duration:.9,ease:'power3.out'},1.0)
+        .to({}, {duration:.5});
+      $$('#balls img.o').forEach(function(b,i){ G.to(b,{x:[10,-12,6][i],duration:3+i*.7,ease:'sine.inOut',yoyo:true,repeat:-1}); }); }
+    /* dresses breathe */
+    $$('.jk img').forEach(function(d,i){ G.fromTo(d,{rotation:-1.6},{rotation:1.6,transformOrigin:'50% 0%',duration:2.2+i*.4,ease:'sine.inOut',yoyo:true,repeat:-1}); });
+    /* Notion stack lands flat */
+    var iso=$('#iso1'); if(iso&&innerWidth>1020) G.fromTo(iso,{rotationX:46,rotationZ:-24,scale:.86,yPercent:-4,transformOrigin:'50% 40%'},{rotationX:0,rotationZ:0,scale:1,yPercent:0,ease:'none',scrollTrigger:{trigger:iso,start:'top 96%',end:'top 22%',scrub:1}});
+    if(iso&&innerWidth<=1020) ScrollTrigger.batch('#iso1 .browser',{start:'top 92%',once:true,onEnter:function(b){ G.fromTo(b,{y:46},{y:0,duration:.7,ease:'back.out(1.5)',stagger:.08}); }});
+    /* satin rises behind the last screen */
+    $$('.drape').forEach(function(d){ G.fromTo(d,{yPercent:48},{yPercent:0,ease:'none',scrollTrigger:{trigger:d.closest('section'),start:'top 80%',end:'bottom bottom',scrub:1}}); });
+    /* pointer: hero glass leans towards the mouse, buttons are magnetic */
+    if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+      var hs=$$('.glh'); window.addEventListener('pointermove',function(e){ var mx=e.clientX/innerWidth-.5,my=e.clientY/innerHeight-.5; G.to(hs,{x:mx*26,y:my*18,duration:.7,overwrite:'auto'}); },{passive:true});
+      $$('.btn:not(.sm)').forEach(function(b){ var X=G.quickTo(b,'x',{duration:.4,ease:'power3'}),Y=G.quickTo(b,'y',{duration:.4,ease:'power3'}); b.addEventListener('pointermove',function(e){ var r=b.getBoundingClientRect(); X((e.clientX-r.left-r.width/2)*.22); Y((e.clientY-r.top-r.height/2)*.3); }); b.addEventListener('pointerleave',function(){ X(0); Y(0); }); });
+    }
     $$('[data-float]').forEach(function(f){ G.to(f,{y:+f.dataset.float,rotation:18,ease:'none',scrollTrigger:{trigger:'.cover',start:'top top',end:'bottom top',scrub:true}}); });
-    $$('.balls svg.o').forEach(function(b,i){ G.to(b,{y:[-16,20,-8][i],x:[10,-12,6][i],duration:3+i*.7,ease:'sine.inOut',yoyo:true,repeat:-1}); });
     if($('#calc')) G.from($$('#calc>*'),{y:30,scale:.8,duration:.6,ease:'back.out(2.2)',stagger:.12,scrollTrigger:{trigger:'#calc',start:'top 86%',once:true}});
     $$('.count').forEach(function(c){ var to=+c.dataset.to,s=c.dataset.s||'',o={v:0}; G.to(o,{v:to,duration:1.5,ease:'power2.out',scrollTrigger:{trigger:c,start:'top 92%',once:true},onUpdate:function(){ c.textContent=Math.round(o.v)+s; }}); });
     window.addEventListener('load',function(){ ScrollTrigger.refresh(); });

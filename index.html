@@ -584,6 +584,58 @@ html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{t
 
 .sub.c{margin-inline:auto;text-align:center}
 .ghost{left:0;right:0;translate:none;display:flex;justify-content:center}
+
+/* topic visuals */
+.vz{margin:clamp(36px,4.6vw,60px) auto 0;max-width:1060px;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:clamp(16px,2.4vw,32px);transition:border-color .25s;overflow:clip}
+.vz:hover{border-color:var(--blue2)}
+.vz .ill{width:100%;height:auto;display:block}
+.vz p{margin:0}
+.vz b{font-weight:700}
+.vz .de{hyphens:manual;color:var(--fg);font:700 clamp(21px,2.6vw,32px)/1.05 var(--disp);letter-spacing:-.03em}
+.vz .vzcp{color:var(--tx);text-align:center;font-size:clamp(15px,1.3vw,18px);margin-top:12px}
+.vz .vzcp .de{font-size:inherit;font-family:var(--text);letter-spacing:0}
+.vzcap2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;padding:0 clamp(4px,2vw,24px)}
+.vzcap2 p.r{text-align:right}
+.vzcap2 span,.vzl span{display:block;color:var(--tx);font-size:clamp(14px,1.25vw,16px);margin-top:4px}
+.vzsay{text-align:center;font:700 clamp(19px,2.2vw,28px)/1.2 var(--disp);letter-spacing:-.02em;margin-top:clamp(16px,2vw,24px);hyphens:manual}
+.vzsay span{display:block;font:400 clamp(14px,1.3vw,17px)/1.3 var(--text);letter-spacing:0;color:var(--tx);margin-top:6px}
+.vzfam{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.8vw,26px)}
+.vzf{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;min-width:0}
+.vzf .ill{max-width:220px}
+.vzf .nm{color:var(--tx);font-size:clamp(14px,1.2vw,15.5px);font-weight:600}
+.vzf .tk{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;font:700 clamp(20px,2vw,26px)/1.1 var(--disp);letter-spacing:-.025em;color:var(--fg);hyphens:manual}
+.vzf .tk i{color:var(--g2);font-style:normal;font-family:var(--text);font-weight:400}
+.vzf .tk u{text-decoration:none;color:#0A0A0B;background:var(--green);border-radius:6px;padding:0 4px;margin-left:1px}
+.vzf .tk u.a{background:var(--amber)}
+.vzf .tk .bl{color:var(--blue2)}
+.vzf .tk.st{flex-direction:column;gap:2px}
+.vzf .tk.st span{font:400 13.5px/1.25 var(--text);letter-spacing:0;color:var(--tx);max-width:21ch}
+.vzf .ht{color:var(--tx);font-size:14px;line-height:1.25}
+.vzdas{display:grid;grid-template-columns:clamp(160px,20vw,250px) minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,44px);max-width:880px;margin-inline:auto;margin-bottom:0}
+.vzdas .ill{max-width:250px}
+.vzgr{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:10px 12px;align-items:center;font:700 clamp(19px,2.7vw,36px)/1.1 var(--disp);letter-spacing:-.03em;hyphens:manual}
+.vzgr .pin{grid-row:1/3;background:var(--amber);color:#0A0A0B;border-radius:12px;padding:0 .4em;display:grid;place-items:center;height:100%;min-height:2em}
+.vzgr .v{padding:.18em .36em;border-radius:10px;background:var(--k3);color:#fff;text-align:center;transition:background .3s,color .3s}
+.vzgr .v.on{background:var(--green);color:#0A0A0B}
+.vzgr .r{color:var(--fg)}
+.vzdas .vzcp{grid-column:1/-1;margin:-4px 0 0}
+.vzdress{grid-column:1/-1;margin:0;max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2.4vw,30px)}
+.vzdress .hlf{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0}
+.vzdress .ill{max-width:300px}
+.vzdress img{height:clamp(160px,17vw,230px);width:auto;margin-top:-6px}
+.vzdress .two{display:flex;justify-content:center;gap:clamp(4px,1.6vw,24px)}
+.vzl{margin-top:10px}
+.vzsalon .ill{max-width:880px;margin-inline:auto}
+.vzswap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;margin-top:14px;font:700 clamp(23px,3vw,38px)/1.1 var(--disp);letter-spacing:-.03em;hyphens:manual}
+.vzswap s{color:var(--g2);text-decoration-color:var(--red);text-decoration-thickness:3px}
+.vzswap i{font-style:normal;color:var(--g2);font-family:var(--text);font-weight:400}
+.vzswap b{color:var(--green)}
+@media(max-width:1020px){.vzfam{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.vzdress{grid-template-columns:1fr}.vzdress .ill{max-width:260px}.vzdas{grid-template-columns:1fr}.vzdas .ill{margin-inline:auto;max-width:200px}.vzgr{justify-content:center}}
+@media(prefers-reduced-motion:no-preference){
+  .vz-snip{animation:vzSnip 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+}
+@keyframes vzSnip{0%,100%{rotate:0deg}12%{rotate:-7deg}24%{rotate:5deg}36%{rotate:0deg}}
 </style>
 
 </head>
@@ -868,7 +920,39 @@ html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{t
         <article class="sv"><h3>Не повторяться</h3><p class="tx c">Слово уже звучало. Хватит.</p>
         <div class="ex"><p lang="de"><b>Der Rock? Den kaufe ich nicht.</b><span lang="ru">Юбка? Эту не куплю.</span></p><button class="say" type="button" data-say="Der Rock? Den kaufe ich nicht." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div></article></div>
     </div>
-    <p class="sub c" style="margin-top:30px;max-width:54ch">Обрати внимание. <b>Der Rock</b> мужского рода, а по-русски юбка женского. Род всё равно берём немецкий.</p>
+<figure class="vz" data-vz="cafe">
+      <svg class="ill" viewBox="0 0 960 300" aria-hidden="true" focusable="false">
+        <defs><g id="vzcf">
+          <rect x="0" y="52" width="360" height="188" rx="4" fill="#F3F3F1"/>
+          <rect x="24" y="108" width="176" height="104" rx="4" fill="#1C1C1F"/>
+          <rect x="24" y="108" width="176" height="104" rx="4" fill="none" stroke="#B9B9B5" stroke-width="3"/>
+          <circle cx="112" cy="188" r="20" fill="#F2B233"/><rect x="108" y="188" width="8" height="24" fill="#F2B233"/>
+          <rect x="62" y="172" width="20" height="16" rx="3" fill="#E4E4E1"/><rect x="142" y="172" width="20" height="16" rx="3" fill="#E4E4E1"/>
+          <rect x="238" y="100" width="94" height="140" rx="4" fill="#2E6BEA"/>
+          <rect x="252" y="114" width="66" height="60" rx="3" fill="#5B8FF7"/>
+          <circle cx="322" cy="182" r="5" fill="#F2B233"/>
+          <g><rect x="-14" y="14" width="388" height="16" fill="#1F4FBF"/>
+          <path d="M-14 30h48v30a24 24 0 0 1-48 0zM34 30h48v30a24 24 0 0 1-48 0zM82 30h48v30a24 24 0 0 1-48 0zM130 30h48v30a24 24 0 0 1-48 0zM178 30h48v30a24 24 0 0 1-48 0zM226 30h48v30a24 24 0 0 1-48 0zM274 30h48v30a24 24 0 0 1-48 0zM322 30h48v30a24 24 0 0 1-48 0z" fill="#2E6BEA"/>
+          <path d="M34 30h48v30a24 24 0 0 1-48 0zM130 30h48v30a24 24 0 0 1-48 0zM226 30h48v30a24 24 0 0 1-48 0zM322 30h48v30a24 24 0 0 1-48 0z" fill="#F3F3F1"/></g>
+        </g></defs>
+        <rect x="0" y="254" width="960" height="46" fill="#1C1C1F"/>
+        <path d="M250 300 700 254H760L560 300Z" fill="#2D2D32"/>
+        <path d="M430 288 462 284M516 278 548 274M600 270 628 267M680 262 700 260" stroke="#B9B9B5" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <g class="vz-near"><use href="#vzcf" transform="translate(70 14)"/>
+          <circle cx="470" cy="214" r="28" fill="#F2B233"/><rect x="465" y="214" width="10" height="40" fill="#F2B233"/>
+          <rect x="452" y="194" width="22" height="20" rx="3" fill="#fff"/><path d="M474 198c10 0 10 12 0 12" fill="none" stroke="#fff" stroke-width="3"/>
+          <path class="vz-mark" d="M250 8l-14 16h28z" transform="rotate(180 250 16)" fill="#1FD35E"/></g>
+        <g class="vz-far"><use href="#vzcf" transform="translate(716 156) scale(.42)"/>
+          <path class="vz-mark" d="M790 136l-9 11h18z" transform="rotate(180 790 141)" fill="#5B8FF7"/></g>
+        <g fill="#2D2D32"><rect x="632" y="116" width="6" height="138"/><circle cx="635" cy="108" r="14" fill="#F2B233"/></g>
+      </svg>
+      <div class="vzcap2">
+        <p><b class="de" lang="de">dieses</b><span>Одно близко</span></p>
+        <p class="r"><b class="de" lang="de">jenes</b><span>Другое дальше</span></p>
+      </div>
+      <p class="vzsay" lang="de">Dieses Café ist billiger als jenes.<span lang="ru">Это кафе дешевле, чем то.</span></p>
+    </figure>
+        <p class="sub c" style="margin-top:30px;max-width:54ch">Обрати внимание. <b>Der Rock</b> мужского рода, а по-русски юбка женского. Род всё равно берём немецкий.</p>
     <div class="cta"><a class="lnk" href="#forms">Узнать формы</a></div>
   </div>
 </section>
@@ -946,6 +1030,48 @@ html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{t
       </div>
     </div>
     </div>
+
+    <figure class="vz vzfam" data-vz="fam" lang="de">
+      <div class="vzf">
+        <svg class="ill" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
+          <rect x="28" y="16" width="78" height="46" rx="10" fill="#F3F3F1"/><rect class="vz-ghost" x="106" y="16" width="44" height="46" rx="10" fill="none" stroke="#1FD35E" stroke-width="2.5" stroke-dasharray="5 5"/>
+          <path d="M160 40C210 40 212 92 198 96" fill="none" stroke="#F2B233" stroke-width="3" stroke-linecap="round"/><path d="M204 88 197 99 190 89" fill="none" stroke="#F2B233" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="20" y="86" width="146" height="46" rx="10" fill="#2E6BEA"/><rect class="vz-tail" x="166" y="86" width="52" height="46" rx="10" fill="#1FD35E"/>
+        </svg>
+        <p class="nm" lang="ru">Хвост от артикля</p>
+        <p class="tk"><b>dem</b><i>→</i><b>dies<u>em</u></b></p>
+      </div>
+      <div class="vzf">
+        <svg class="ill" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
+          <rect x="24" y="38" width="68" height="72" rx="12" fill="#F3F3F1"/><circle cx="46" cy="66" r="6" fill="#0A0A0B"/><circle cx="70" cy="66" r="6" fill="#0A0A0B"/><path d="M44 86q14 12 28 0" fill="none" stroke="#0A0A0B" stroke-width="4" stroke-linecap="round"/>
+          <rect x="112" y="38" width="68" height="72" rx="12" fill="#F3F3F1"/><circle cx="134" cy="66" r="6" fill="#0A0A0B"/><circle cx="158" cy="66" r="6" fill="#0A0A0B"/><path d="M132 86q14 12 28 0" fill="none" stroke="#0A0A0B" stroke-width="4" stroke-linecap="round"/>
+          <rect class="vz-tail" x="180" y="56" width="46" height="36" rx="10" fill="#F2B233"/>
+        </svg>
+        <p class="nm" lang="ru">Двойники</p>
+        <p class="tk"><b>den</b><i>→</i><b>den<u class="a">en</u></b></p>
+        <p class="ht" lang="ru">Dat. мн.ч.</p>
+      </div>
+      <div class="vzf">
+        <svg class="ill" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
+          <path d="M58 44 120 8l62 36z" fill="#F2B233"/>
+          <g class="vz-top"><rect x="64" y="44" width="112" height="44" fill="#F3F3F1"/><rect x="78" y="56" width="24" height="22" rx="3" fill="#2E6BEA"/><rect x="138" y="56" width="24" height="22" rx="3" fill="#2E6BEA"/></g>
+          <rect x="64" y="88" width="112" height="44" fill="#2E6BEA"/><rect x="106" y="100" width="28" height="32" rx="3" fill="#F3F3F1"/><rect x="74" y="100" width="20" height="18" rx="3" fill="#5B8FF7"/><rect x="146" y="100" width="20" height="18" rx="3" fill="#5B8FF7"/>
+        </svg>
+        <p class="nm" lang="ru">Двухэтажные</p>
+        <p class="tk st"><b>selben</b><span lang="ru">второй как слабое прилагательное</span></p>
+        <p class="tk st"><b class="bl">dem</b><span lang="ru">первый этаж как артикль</span></p>
+      </div>
+      <div class="vzf">
+        <svg class="ill" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
+          <path d="M42 132 60 54l44-22 70 12 34 88z" fill="#2D2D32"/><path d="M98 62l18 26-12 22M150 74l-10 24" fill="none" stroke="#131315" stroke-width="3" stroke-linecap="round"/>
+          <path class="vz-lock" d="M100 82V60a22 22 0 0 1 44 0v22" fill="none" stroke="#B9B9B5" stroke-width="9" stroke-linecap="round"/>
+          <rect x="84" y="78" width="76" height="52" rx="10" fill="#F2B233"/><circle cx="122" cy="100" r="7" fill="#0A0A0B"/><rect x="118.500" y="102" width="7" height="14" rx="2" fill="#0A0A0B"/>
+        </svg>
+        <p class="nm" lang="ru">Упрямые</p>
+        <p class="tk"><b>selbst</b></p>
+        <p class="ht" lang="ru">Не меняются никогда</p>
+      </div>
+    </figure>
   </div>
 </section>
 
@@ -963,6 +1089,20 @@ html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{t
       <div class="fend" id="fr"><h3>Показываешь. Слово стоит прямо перед существительным</h3><strong lang="de" id="frt">Diese Freundin ist nett.</strong><p>Тут уже <b class="n">dieser</b> и его хвосты.</p></div>
     </div>
 
+    <figure class="vz vzdas" data-vz="das" lang="de">
+      <svg class="ill" viewBox="0 0 240 200" aria-hidden="true" focusable="false">
+        <rect x="12" y="164" width="216" height="26" rx="6" fill="#2D2D32"/><path d="M12 164h216v6H12z" fill="#3A3A40"/>
+        <g class="vz-nail"><rect x="112" y="92" width="16" height="74" fill="#B9B9B5"/><path d="M112 166h16l-8 18z" fill="#B9B9B5"/><rect x="94" y="80" width="52" height="14" rx="4" fill="#F2B233"/></g>
+        <g class="vz-ham"><rect x="134" y="42" width="98" height="20" rx="10" fill="#1F4FBF"/><rect x="98" y="8" width="44" height="72" rx="8" fill="#2E6BEA"/></g>
+      </svg>
+      <div class="vzgr">
+        <span class="pin">Das</span>
+        <span class="v on">ist</span><span class="r">meine Freundin.</span>
+        <span class="v">sind</span><span class="r">meine Eltern.</span>
+      </div>
+      <p class="vzcp" lang="ru">Меняется только глагол. <b class="de" lang="de">Das</b> стоит насмерть.</p>
+    </figure>
+
     <div class="traps">
       <article class="trap" data-rv><h3>Это мои родители</h3>
         <div class="bad"><svg class="ic" aria-hidden="true"><use href="#i-circle-x"/></svg><span lang="de">Diese sind meine Eltern.</span></div>
@@ -976,6 +1116,26 @@ html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{t
         <div class="bad"><svg class="ic" aria-hidden="true"><use href="#i-circle-x"/></svg><span lang="de">Wir haben dasselbe Kleid gekauft.</span></div>
         <div class="ok"><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg><span lang="de">Wir haben das gleiche Kleid gekauft.</span><button class="say" type="button" data-say="Wir haben das gleiche Kleid gekauft." aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
         <p class="tx"><b>Dasselbe</b> это один и тот же предмет. Одно платье на двоих. <b>Das gleiche</b> это такое же, но своё.</p></article>
+      <figure class="vz vzdress" data-vz="dress">
+        <div class="hlf">
+          <svg class="ill" viewBox="0 0 320 120" aria-hidden="true" focusable="false">
+            <circle cx="88" cy="40" r="26" fill="#5B8FF7"/><path d="M50 100a38 34 0 0 1 76 0z" fill="#2E6BEA"/>
+            <circle cx="232" cy="40" r="26" fill="#F3F3F1"/><path d="M194 100a38 34 0 0 1 76 0z" fill="#B9B9B5"/>
+            <path d="M100 102 160 118M220 102 160 118" fill="none" stroke="#1FD35E" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/>
+          </svg>
+          <img src="media/dress-g.webp" alt="" loading="lazy" width="150" height="225">
+          <p class="vzl"><b class="de" lang="de">dasselbe</b><span>Одно платье на двоих</span></p>
+        </div>
+        <div class="hlf">
+          <svg class="ill" viewBox="0 0 320 120" aria-hidden="true" focusable="false">
+            <circle cx="88" cy="40" r="26" fill="#5B8FF7"/><path d="M50 100a38 34 0 0 1 76 0z" fill="#2E6BEA"/>
+            <circle cx="232" cy="40" r="26" fill="#F3F3F1"/><path d="M194 100a38 34 0 0 1 76 0z" fill="#B9B9B5"/>
+          </svg>
+          <div class="two"><img src="media/dress-g.webp" alt="" loading="lazy" width="150" height="225"><img src="media/dress-g.webp" alt="" loading="lazy" width="150" height="225"></div>
+          <p class="vzl"><b class="de" lang="de">das gleiche</b><span>Такое же, но своё</span></p>
+        </div>
+      </figure>
+
       <article class="trap" data-rv><h3>В два слова</h3>
         <div class="bad"><svg class="ic" aria-hidden="true"><use href="#i-circle-x"/></svg><span lang="de">in dem selben Haus</span></div>
         <div class="ok"><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg><span lang="de">in demselben Haus</span><button class="say" type="button" data-say="in demselben Haus" aria-label="Озвучить по-немецки"><svg class="ic" aria-hidden="true"><use href="#i-volume-2"/></svg></button></div>
@@ -1051,6 +1211,28 @@ html.gs .stp:not(.in)::after{transform:scaleX(0)}html.gs .stp:not(.in)::before{t
       <div class="ch" data-rv><i><img src="media/3i-user-check.webp" alt=""></i><p>Тот, который →</p><strong lang="de">derjenige, der</strong></div>
       <div class="ch" data-rv><i><img src="media/3i-hand.webp" alt=""></i><p>Сам или даже →</p><strong lang="de">selbst</strong></div>
     </div>
+
+    <figure class="vz vzsalon" data-vz="salon">
+      <svg class="ill" viewBox="0 0 980 360" aria-hidden="true" focusable="false">
+        <rect x="0" y="300" width="980" height="60" fill="#1C1C1F"/><path d="M0 330h980" stroke="#2D2D32" stroke-width="2"/>
+        <g class="vz-mirror"><rect x="560" y="26" width="360" height="262" rx="16" fill="#0A0A0B" stroke="#B9B9B5" stroke-width="6"/>
+          <path d="M600 60 668 26M640 118 748 26" stroke="#1C1C1F" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="740" cy="150" r="58" fill="#E4E4E1"/>
+          <path class="vz-fringe" d="M684 122c8-30 34-46 56-46 28 0 50 18 58 46l-12 6-8-10-10 12-8-12-10 12-8-12-10 12-8-12-10 12-8-10z" fill="#2E6BEA"/>
+          <circle cx="718" cy="156" r="6" fill="#131315"/><circle cx="762" cy="156" r="6" fill="#131315"/><path d="M720 186q20-14 40 0" fill="none" stroke="#131315" stroke-width="5" stroke-linecap="round"/>
+          <path d="M660 288c10-52 50-76 80-76s70 24 80 76z" fill="#1FD35E"/>
+        </g>
+        <g class="vz-seat"><rect x="356" y="300" width="60" height="40" rx="6" fill="#2D2D32"/><rect x="300" y="280" width="172" height="26" rx="10" fill="#3A3A40"/>
+          <path d="M320 286c8-64 42-104 66-104s58 40 66 104z" fill="#1FD35E"/><circle cx="386" cy="146" r="46" fill="#2E6BEA"/></g>
+        <g class="vz-barber"><path d="M120 340V206c0-30 22-54 52-54s52 24 52 54v134z" fill="#F3F3F1"/><path d="M136 340V240h72v100z" fill="#2E6BEA"/>
+          <circle cx="172" cy="112" r="40" fill="#E4E4E1"/><path d="M132 112c0-30 18-48 40-48 24 0 40 18 40 48-8-14-24-22-40-22s-32 8-40 22z" fill="#F2B233"/><circle cx="172" cy="56" r="16" fill="#F2B233"/>
+          <path d="M214 196 276 152" stroke="#F3F3F1" stroke-width="20" stroke-linecap="round"/>
+          <g class="vz-snip" transform="translate(286 138)"><circle cx="-16" cy="16" r="11" fill="none" stroke="#F2B233" stroke-width="5"/><circle cx="14" cy="22" r="11" fill="none" stroke="#F2B233" stroke-width="5"/><path d="M-6 8 30-40M6 12 40-34" stroke="#B9B9B5" stroke-width="5" stroke-linecap="round"/></g>
+        </g>
+      </svg>
+      <p class="vzswap" lang="de"><s>die da</s><i aria-hidden="true">→</i><b>diese Dame</b></p>
+      <p class="vzcp" lang="ru">Эта дама</p>
+    </figure>
     <p class="moral" style="margin-top:clamp(48px,6vw,84px)" data-words>Der называет. Dieser показывает. Палец можно убрать.</p>
   </div>
 </section>
@@ -1508,6 +1690,22 @@ function zeigerInit(){
     window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
     if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ ScrollTrigger.refresh(); onScroll(); });
   }
+  (function(){
+    var das=$('.vzdas .vzgr');
+    if(das&&!reduce){ var vs=$$('.v',das),vi=0,vt=null; whenVisible(das,function(){ if(vt) return; vt=setInterval(function(){ vi=(vi+1)%2; vs.forEach(function(x,i){ x.classList.toggle('on',i===vi); }); },1700); },function(){ clearInterval(vt); vt=null; }); }
+    if(!G) return;
+    function enter(sel,fn,pos){ $$(sel).forEach(function(el){ ScrollTrigger.create({trigger:el,start:pos||'top 82%',once:true,onEnter:function(){ fn(el); }}); }); }
+    enter('[data-vz=cafe]',function(el){
+      G.fromTo($('.vz-near',el),{scale:.86,transformOrigin:'0% 100%'},{scale:1,duration:.8,ease:'back.out(1.5)'});
+      G.fromTo($('.vz-far',el),{x:48},{x:0,duration:.8,ease:'power3.out',delay:.15});
+      G.fromTo($$('.vz-mark',el),{y:-14},{y:0,duration:.5,ease:'bounce.out',delay:.4,stagger:.18});
+    });
+    enter('.vzf',function(el){ var t=$('.vz-tail',el); if(t) G.fromTo(t,{x:-40,y:-60},{x:0,y:0,duration:.8,ease:'back.out(1.6)'}); var top=$('.vz-top',el); if(top) G.fromTo(top,{y:-14},{y:0,duration:.6,ease:'bounce.out'}); var l=$('.vz-lock',el); if(l) G.fromTo(l,{y:-18},{y:0,duration:.5,ease:'back.out(3)',delay:.2}); });
+    enter('[data-vz=das]',function(el){ G.fromTo($('.vz-ham',el),{rotation:-24,svgOrigin:'232 52'},{rotation:0,svgOrigin:'232 52',duration:.5,ease:'power2.in'}); G.fromTo($('.vz-nail',el),{y:-22},{y:0,duration:.25,ease:'power4.in',delay:.48}); });
+    enter('[data-vz=dress] .hlf',function(el){ G.fromTo($$('img',el),{y:30,rotation:-4},{y:0,rotation:0,duration:.7,ease:'back.out(1.8)',stagger:.08}); });
+    enter('[data-vz=salon]',function(el){ G.fromTo($('.vz-barber',el),{x:-44},{x:0,duration:.7,ease:'power3.out'}); G.fromTo($('.vz-fringe',el),{y:-14},{y:0,duration:.4,ease:'bounce.out',delay:.5}); });
+    ScrollTrigger.refresh();
+  })();
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',zeigerInit); else zeigerInit();
 </script>
